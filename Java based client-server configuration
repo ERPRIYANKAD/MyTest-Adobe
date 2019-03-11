@@ -1,0 +1,70 @@
+Short Overview of the Software:
+a.	What is the Product?
+The product uses Java networking concept using client server configuration. Here the code sample is setting up server and client and threads are created, assigned tasks and executed . The HTTP request and response can be checked and status code and content length can be verified to see if the formed URL are working fine 
+b.	What is the Goal?
+In the sample of code given we need to trigger the server then trigger the client then will be able to load this local host port and so we are able to see GET request is successfully done or not. 
+Multiple clients (10 in the sample) are connected to the server, thread pool(10 threads per pool in the sample) is created , worker threads are assigned tasks , executed . The HTTP request sent is evaluated and response is formed with Status code (200 if Ok) and content length is displayed.
+ 
+
+c.	How does it work?
+First, we need to trigger Server.bat file which is actually triggering the Server. Java file.
+In the server.java file list of functions and methods are executing which are coming from different classes, so this is how the server is getting triggered.
+Now when any client/user is clicking on the Clients.bat file so this file is executing the file Stress.Test.java
+When the connection between client and server is made, various worker threads are assigned tasks and executed, on the client side URL is formed. 
+HTTP request can be sent, and response can be verified.
+
+ 
+
+2. How to start and test if it works?
+If I am using some browser to test localhost/Test1.html then it won’t be loaded until and unless server is up
+ 
+First, we need to trigger the server and polling the client connected to it and now when you press the refresh button, load the same link localhost/Test1.html then it will run and give us the success response of “200” status. 
+
+ 
+
+3. How would you test the software, what kind of test cases you would run it with that purpose?
+ For this will check if I am connecting directly with the client without triggering server then it should give message “Refused to connect” but if it not giving such type of error then there would be bug.
+2nd : If server is not up then user should not be able to load any file on that server,
+If user is still able to load, then there is a bug.
+So, this kind of test cases I would write to test this software.
+For e.g. Server is not up and directly connecting to the server so getting “Refused to connect “ error.
+ 
+
+
+4. what testing methodology you would choose to test the software?
+This is very generic, it depends on what kind of testing we are going to do.
+whether I am going to do configuration base testing or unit testing or integration like all methods are working properly or not so based on those scenarios I will opt testing methodology.
+Also I would need to understand the workflow and decide on the tools needed.
+There are several considerations that can be important here like number of clients connected (which is hardcoded to 10) , if it is increased to 500 system performance , threads dependencies may be impacted . 
+5. Describe what tools you’d use to test the software and to generate reports?
+I have used Soap UI and Postman to test this type of software using CRUD operation and to generate report as well.
+   
+7. If you find Bugs, write a sample Bug Project?
+Bug Name: Application terminates on clicking the No button while asking “Are you want to terminate the process”
+Bug ID: It will be automatically created by the BUG Tracking tool once we save this bug else we can give any valid name if we are creating on Excel sheet.
+Area Path: USERS menu > New Users
+Severity: HIGH Priority: HIGH 
+Assigned to: Developer-X
+Reported By: Priyanka Dubey
+Reported On: 3/9/2019
+Reason: Defect
+Status: Open
+Environment: Windows 2010/SQL Server 2005
+
+Description: While trying to terminate the client session so it is showing “Do you want to terminate the process Y/N” and when I am providing N, still it is terminating.
+
+Steps to Reproduce:
+1) click on terminate the session.
+2) Getting message
+3) Are you want to terminate the process
+4) Type ‘No’
+5) Still it is terminating. 
+Expected result: while typing No, it should not terminate, if I will provide “YES” then only it should terminate. From the client prospective it is Bug.
+
+8. Analyze the result of testing efforts, give a recommendation whether to release it or not, and why?
+
+We cannot release the product until and unless we know who the intended person is what is the expected behavior, what exactly it supposed to do and who is the intended audience to use this software
+For example: Like number of clients connected (which is hardcoded to 10) , if it is increased to 500 system performance , threads dependencies may be impacted . Also the bug needs to be closed which terminates the session even on ‘N’ selection on console for ‘Do you want to terminate the process Y/N’.
+
+
+
